@@ -38,7 +38,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/sanjay10985/react-firebase-auth.git
+   git clone https://github.com/sanjay10985/react-firebase-starter.git
    cd react-firebase-auth
    ```
 
