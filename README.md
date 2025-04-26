@@ -90,14 +90,34 @@ function MyComponent() {
 - `signInWithGoogle()` - Initiate Google Sign-in
 - `signOut()` - Sign out current user
 
-### Protected Routes
+### Route Configuration
+
+Our routing system uses a `MapRoutes` utility that automatically wraps components with appropriate route guards:
 
 ```jsx
-// Example of a protected route
-import { ProtectedRoute } from "../components";
+// Example route configuration array
+const routes = [
+   {
+    path: '/login',
+    element: <LoginPage />,
+    public: true // Marks route as publicly accessible
+  }
+  {
+    path: '/dashboard',
+    element: <Dashboard />, // Marks route as private as we have not provided public: true
+  },
 
-<ProtectedRoute path="/dashboard" element={<Dashboard />} />;
+];
+
+// Usage in main router configuration
+
 ```
+
+The `PrivateRoute` component:
+
+- Shows loading indicator during auth check
+- Redirects unauthenticated users to login
+- Uses Auth context to verify authentication status
 
 ## Available Scripts
 
