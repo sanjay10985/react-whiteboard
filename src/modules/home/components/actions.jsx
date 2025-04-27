@@ -21,7 +21,11 @@ export default function Actions() {
   }
   return (
     <div className="flex gap-4">
-      <Button variant="outline" onClick={() => handleSessionCreation()}>
+      <Button
+        variant="outline"
+        onClick={() => handleSessionCreation()}
+        className="bg-white hover:bg-gray-50 text-gray-800 font-medium px-6 py-2 rounded-md transition-colors"
+      >
         Create
       </Button>
       <DialogDemo />

@@ -6,5 +6,7 @@ export default function Board() {
 
   usePaintBoard({ canvasRef });
 
-  return <canvas ref={canvasRef} width={800} height={500} className="border" />;
+  return (
+    <canvas ref={canvasRef} width={1200} height={700} className="border" />
+  );
 }

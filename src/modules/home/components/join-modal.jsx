@@ -18,7 +18,15 @@ export function DialogDemo() {
   const navigate = useNavigate();
 
   function handleJoinBoard() {
-    navigate(board);
+    // Extract board ID from URL if full URL is provided
+    let boardId = board;
+    try {
+      const url = new URL(board);
+      boardId = url.pathname.substring(1); // Remove leading slash
+    } catch {
+      // If URL parsing fails, use the input as-is
+    }
+    navigate(boardId);
   }
 
   return (

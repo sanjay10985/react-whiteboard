@@ -36,8 +36,16 @@ const Card = ({ session }) => {
     return () => unsubscribe();
   }, [session]);
   return (
-    <Link to={session} className="hover:shadow-md">
-      <canvas ref={canvasRef} width={300} height={200} className="border" />
+    <Link
+      to={session}
+      className="block transition-all duration-300 hover:transform hover:scale-[1.02]"
+    >
+      <canvas
+        ref={canvasRef}
+        width={300}
+        height={200}
+        className="w-full rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300"
+      />
     </Link>
   );
 };
