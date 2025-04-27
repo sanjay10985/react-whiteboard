@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Auth from "@/modules/auth";
 import { MapRoutes } from "@/router/components/map-routes";
 import Home from "@/modules/home";
+import MainWhiteBoard from "@/modules/white-board";
 
 const routeConfig = [
   {
@@ -17,6 +18,13 @@ const routeConfig = [
     element: <Home />,
     handle: {
       crumb: () => "Home",
+    },
+  },
+  {
+    path: "/:sessionId",
+    element: <MainWhiteBoard />,
+    handle: {
+      crumb: () => "Board",
     },
   },
 ];

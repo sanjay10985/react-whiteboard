@@ -1,5 +1,19 @@
-import Whiteboard from "@/components/whiteboard";
+import Loader from "@/components/loader";
+import Header from "./components/header";
+import { useBoard } from "@/contexts/board";
+import ExistingBoards from "./components/existing-boards";
 
 export default function Home() {
-  return <Whiteboard />;
+  const { isLoading } = useBoard();
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  return (
+    <div className="">
+      <Header />
+      <ExistingBoards />
+    </div>
+  );
 }
